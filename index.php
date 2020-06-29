@@ -1,0 +1,1 @@
+<?php echo "This is My New WordPress Theme";?>
