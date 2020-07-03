@@ -14,6 +14,8 @@
   * Theme Support
   * Register Styles
   * Register Scripts
+  * Register Menus
+  * Register Widgets
   *
   */
 
@@ -159,6 +161,75 @@
    }
 
    add_action( 'wp_enqueue_scripts', 'paparazi_theme_scripts');
+
+
+   /***
+   * This sets up registers The Menu for our WordPress Theme
+   * 
+   * 
+   */
+
+   function paparazi_register_menus()
+   {
+       # code...
+
+    //    lets add menus for our header part
+
+    register_nav_menus( array(
+
+        'primary_menu' => __('Primary Menu', 'paparazi'),
+        
+    ) );
+
+   }
+
+   add_action( 'init', 'paparazi_register_menus');
+
+
+ /***
+   * This sets up  The Widget for our WordPress Theme
+   * 
+   * 
+   */
+
+   function paparazi_register_sidebars()
+   {
+       # code...
+
+       register_sidebar( 
+           array(
+
+            'id'=>'primary',
+            'name'=> __('Primary Sidebar', 'paparazi'),
+            'description'=> __('This is The Primary Sidebar of our Theme','paparazi'),
+            'before_widget'=>'<div id="%1$s" class="widget %2$s sidebar-box ftco-animate">',
+            'after_widget'=>'</div>',
+            'before_title'=>'<h3 class="sidebar-heading">',
+            'after_title'=>'</h3>',
+
+
+           ) 
+        
+        
+        
+        
+        );
+   }
+
+
+   add_action( 'widgets_init', 'paparazi_register_sidebars');
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
