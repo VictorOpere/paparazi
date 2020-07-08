@@ -81,13 +81,13 @@
     add_theme_support( 'customize-selective-refresh-widgets');
 
     // lets add theme support for custom headers
-
+    
     add_theme_support( 'custom-header' );
-
+    
     // enabling theme support for align and full align option for the block gutenberg editor
-
+    
     add_theme_support( 'align-wide' );
-
+    
     // switch default core markup for the search form, comment form and comments to output valid HTML5
 
     add_theme_support( 'html5',
@@ -209,9 +209,6 @@
 
 
            ) 
-        
-        
-        
         
         );
    }
